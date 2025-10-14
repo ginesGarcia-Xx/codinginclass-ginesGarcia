@@ -1,4 +1,3 @@
-import re
 #2.1 Count how many lines contain the word "APP".
 """
 with open("mobile_apps-research.txt", "r") as f:
@@ -100,7 +99,10 @@ with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         print(line.lower().replace("security", "SECURITY").strip())"""
 #3.6Remove all numbers from the lines.
-"""with open("mobile_apps-research.txt", "r") as f:
+"""
+import re
+
+with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         print(re.sub(r"\d", "")) #el 'r"d"' reemplaza todos los digitos. y los sustituye por "" """
 #3.7Replace all occurrences of "mobile" with "MOBILE".
