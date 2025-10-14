@@ -2,29 +2,48 @@
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         print(line.strip())"""
+
+"""with open("mobile_apps-research.txt", "r") as f:
+    print(f.read())""" #corregido, asi no usa tantos recursos (XD) con un for
 # 1.2 Print line numbers along with each line.
-"""
+""" mi intento
 with open("mobile_apps-research.txt") as f:
     count = 0
     for line in f.readlines():
         count += 1
         print(f"{count}: {line.strip()}")
-"""
-# 1.3 Print lines which doesn t end with a dot
-"""
+""" #tambien se puede usar print("{}: {}".format(count, line.strip()))
+""" tambien se puede usar este tipo de for
+with open("mobile_apps-research.txt") as f:
+    for i, line in enumerate(f, start = 1):
+        print(f"{i}: {line.strip()}")"""
+# 1.3 Print lines which doesn't end with a dot
+""" mi manera de hacerlo
 with open("mobile_apps-research.txt") as f:
     for line in f.readlines():
         if not line.strip().endswith("."):
             print(line)
 """
+""" guardandolo en una variable
+with open("mobile_apps-research.txt", "r") as f:
+    content = f.read()
+    for line in content.splitlines():
+        if not content.endswith("."):
+            print(line)"""
 # 1.4 Count and print the total number of lines.
-"""with open("mobile_apps-research.txt", "r") as f:
+""" mi ejercicio
+with open("mobile_apps-research.txt", "r") as f:
     count = 0
     for line in f.readlines():
         count += 1
     print(f"Total number of lines: {count}")"""
+""" otra manera
+with open("mobile_apps-research.txt", "r") as f:
+    numLines = sum(1 for _ in f) el "_" sirve para iterar cuando no te interesa el contenido.
+    print(f"Total number of lines: {numLines}")"""
 # 1.5 Display only lines that start with a digit.
-"""with open("mobile_apps-research.txt", "r") as f:
+"""
+with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         if line.strip()[0].isdigit():
             print(line)"""
