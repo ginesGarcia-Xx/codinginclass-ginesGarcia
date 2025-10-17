@@ -2,6 +2,7 @@
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         print(line.strip())"""
+from re import search
 
 """with open("mobile_apps-research.txt", "r") as f:
     print(f.read())""" #corregido, asi no usa tantos recursos (XD) con un for
@@ -42,16 +43,25 @@ with open("mobile_apps-research.txt", "r") as f:
     numLines = sum(1 for _ in f) el "_" sirve para iterar cuando no te interesa el contenido.
     print(f"Total number of lines: {numLines}")"""
 # 1.5 Display only lines that start with a digit.
-"""
+""" mi intento
 with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         if line.strip()[0].isdigit():
-            print(line)"""
+            print(line)
+"""
 # 1.6 Display only lines that contain the word "mobile".
-"""with open("mobile_apps-research.txt", "r") as f:
+"""mi intento
+with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         if line.__contains__("mobile"):
-            print(line)"""
+            print(line)
+"""
+""" correccion, funciona igual que el otro
+with open("mobile_apps-research.txt", "r") as f:
+    for line in f.readlines():
+        if search("mobile", line.strip()):
+            print(line.strip())
+"""
 # 1.7 Convert each line to uppercase before printing.
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
