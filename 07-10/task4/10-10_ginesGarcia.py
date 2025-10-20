@@ -7,6 +7,15 @@ with open("mobile_apps-research.txt", "r") as f:
             count += 1
 print(f"Total number of lines containing the word APP: {count}")
 """
+"""
+import re
+with open("mobile_apps-research.txt", "r") as f:
+    count = 0
+    for line in f.readlines():
+        if re.search("app", line, re.IGNORECASE): #SI PONGO "\dAPP\d" no me detecta ninguna
+            count += 1
+print("Total number of lines containing the word APP: {}".format(count))
+"""
 #2.2 Find how many times "data" appears in the entire file (case insensitive).
 """
 with open("mobile_apps-research.txt", "r") as f:
@@ -17,19 +26,29 @@ with open("mobile_apps-research.txt", "r") as f:
 print(f"Total number of times 'data' appears in the file: {count}")
 """
 #2.3Print the longest line.
-"""with open("mobile_apps-research.txt", "r") as f:
+""" mi intento
+with open("mobile_apps-research.txt", "r") as f:
     masLarga = ""
     for line in f.readlines():
         if len(masLarga) < len(line):
             masLarga = line
-print(masLarga)"""
+print(masLarga)
+"""
+""" correccion
+with open("mobile_apps-research.txt", "r") as f:
+    lines = f.readlines()
+    masLarga = max(lines, key=len)
+    print("Longest line: ", {masLarga.strip()})
+    """
 #2.4 Print the shortest line
-"""with open("mobile_apps-research.txt", "r") as f:
+""" la variable masCorta se inicializa con 
+with open("mobile_apps-research.txt", "r") as f:
     masCorta = f.readline()
     for line in f.readlines():
         if len(line) < len(masCorta):
             masCorta = line
-print(masCorta)"""
+print(masCorta)
+"""
 #2.5 Count how many lines end with an exclamation mark !.
 """with open("mobile_apps-research.txt", "r") as f:
     count = 0
@@ -39,19 +58,28 @@ print(masCorta)"""
             count += 1
     print(f"Total number of lines ending with an exclamation mark: {count}")
 """
+import re
+with open("mobile_apps-research.txt", "r") as f:
+    count = 0
+    for line in f.readlines():
+        if re.search(r"!\Z", line.strip()):
+            count += 1
+print(f"Total number of lines ending with an exclamation mark: {count}")
 #2.6Find and print all lines that contain numbers.
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         if any(ch.isdigit() for ch in line):
             print(line)"""
 #2.7Extract all digits from each line and print them.
-"""with open("mobile_apps-research.txt", "r") as f:
+"""
+with open("mobile_apps-research.txt", "r") as f:
     numeros = []
     for line in f.readlines():
         for ch in line:
             if ch.isdigit():
                 numeros.append(ch)
-print(numeros)"""
+print(numeros)
+"""
 #2.8Count how many total characters are in the file.
 """with open("mobile_apps-research.txt", "r") as f:
     count = 0
@@ -60,11 +88,11 @@ print(numeros)"""
             count += 1
 print(f"Total number of characters: {count}")"""
 #2.9Count how many total words are in the file.
-"""with open("mobile_apps-research.txt", "r") as f:
+with open("mobile_apps-research.txt", "r") as f:
     count = 0
     for line in f.readlines():
-        count += len(line.strip().split())
-print(f"Total number of words: {count}")"""
+        count += len(line.strip().split(" "))
+print(f"Total number of words: {count}")
 #2.10 Print lines with more than 10 words.
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
@@ -104,7 +132,7 @@ import re
 
 with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
-        print(re.sub(r"\d", "")) #el 'r"d"' reemplaza todos los digitos. y los sustituye por "" """
+        print(re.sub(r"\d", "")) """
 #3.7Replace all occurrences of "mobile" with "MOBILE".
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
