@@ -17,7 +17,7 @@ with open("mobile_apps-research.txt", "r") as f:
 print("Total number of lines containing the word APP: {}".format(count))
 """
 #2.2 Find how many times "data" appears in the entire file (case insensitive).
-"""
+""" j
 with open("mobile_apps-research.txt", "r") as f:
     count = 0
     for line in f.readlines():
@@ -50,13 +50,15 @@ with open("mobile_apps-research.txt", "r") as f:
 print(masCorta)
 """
 #2.5 Count how many lines end with an exclamation mark !.
-"""with open("mobile_apps-research.txt", "r") as f:
+"""mio
+with open("mobile_apps-research.txt", "r") as f:
     count = 0
     for line in f.readlines():
         if line.strip().endswith("!"):
             print(line)
             count += 1
     print(f"Total number of lines ending with an exclamation mark: {count}")
+"""
 """
 import re
 with open("mobile_apps-research.txt", "r") as f:
@@ -65,6 +67,7 @@ with open("mobile_apps-research.txt", "r") as f:
         if re.search(r"!\Z", line.strip()):
             count += 1
 print(f"Total number of lines ending with an exclamation mark: {count}")
+"""
 #2.6Find and print all lines that contain numbers.
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
@@ -88,11 +91,13 @@ print(numeros)
             count += 1
 print(f"Total number of characters: {count}")"""
 #2.9Count how many total words are in the file.
+"""
 with open("mobile_apps-research.txt", "r") as f:
     count = 0
     for line in f.readlines():
         count += len(line.strip().split(" "))
 print(f"Total number of words: {count}")
+"""
 #2.10 Print lines with more than 10 words.
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
@@ -102,12 +107,19 @@ print(f"Total number of words: {count}")
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         print(line.replace("APP", "APPLICATION").strip())"""
+"""
+import re
+with open("mobile_apps-research.txt", "r") as f:
+    for line in f.readlines():
+        print(re.sub(r"\bAPPLICATIONS\b", "app", line.strip(), flags=re.IGNORECASE))
+"""
 #3.2Replace special characters like @, &, —, and ↔ with spaces.
-"""with open("mobile_apps-research.txt", "r") as f:
+"""
+with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
         nuevaLinea = line.replace("@", " ").replace("&", " ").replace("—", " ").replace("↔", " ").strip()
-        print(nuevaLinea)"""
-
+        print(nuevaLinea)
+"""
 """import re
 
 with open("mobile_apps-research.txt", "r") as f:
@@ -115,13 +127,22 @@ with open("mobile_apps-research.txt", "r") as f:
         nuevaLinea = re.sub(r"[@&—↔]", "", line)
         print(nuevaLinea.strip())"""
 #3.3Reverse each line’s text.
-"""with open("mobile_apps-research.txt", "r") as f:
+""" mi intento
+with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
-        print(line.strip()[::2])"""  #el [::-1] indica que se imprima del reves. si pusiera [::2] imprimiria un caracter de cada 2. si pongo "hola" imprimiria "hl"
+        print(line.strip()[::-1])
+"""  #el [::-1] indica que se imprima del reves. si pusiera [::2] imprimiria un caracter de cada 2. si pongo "hola" imprimiria "hl"
+"""
+with open("mobile_apps-research.txt", "r") as f:
+    for line in f.readlines():
+        print("".join(reversed(line.strip())))
+"""
 #3.4Capitalize only the first word of each line.
-"""with open("mobile_apps-research.txt", "r") as f:
+"""
+with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
-        print(line.capitalize())"""
+        print(line.capitalize().strip())
+"""
 #3.5Print each line but highlight (uppercase) the word "security".
 """with open("mobile_apps-research.txt", "r") as f:
     for line in f.readlines():
