@@ -1,0 +1,11 @@
+id,AppName,MinAge,MaxAge,Features
+1,ChatMate,13,99,messaging;stickers;voice calls
+2,FitTrack,12,70,fitness tracking;calorie counter;sleep monitor
+3,BrainBoost,7,60,puzzles;memory games;daily challenges
+4,SafeBank,18,99,secure login;fund transfers;budget analytics
+5,HealthHub,10,80,heart rate monitor;AI coach;diet tracking
+6,LearnX,6,18,interactive lessons;quizzes;progress tracking
+7,EcoDrive,16,70,eco tips;fuel monitor;route optimization
+8,PhotoFix,13,99,photo filters;AI enhancement;background remover
+9,Budgetly,18,99,expense tracker;reports;savings goals
+10,MindEase,10,80,meditation;sleep sounds;stress relief
