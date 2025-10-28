@@ -1,0 +1,3 @@
+id,appName,minAge,maxAge,features
+1,ChatMate,13,99,messaging;stickers;voice calls
+2,FitTrack,12,70,fitness tracking;calorie counter;sleep monitor

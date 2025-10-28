@@ -27,24 +27,29 @@ with open("mobile_apps_dataset.csv", "r") as f:
         print(line.strip())
 """
 #read the csv file but as a table, row by row
-tableR = []
+"""tableR = []
 with open("mobile_apps_dataset.csv", "r") as f:
     lines = f.readlines()
     for line in lines:
         row = line.strip().split(",")
         tableR.append(row)
-
+"""
 #ex 1
 #show just the id and the features separated by a space instead of ,
 # and a dot instead of ;
 """
 with open("mobile_apps_dataset.csv", "r") as f:
-    for row in tableR:
+    for line in f.readlines():
+        row = line.strip().split(",")
         print(row[0], row[4].replace(";", "."))
 """
 #ex 2
 # show just the mobile apps for adults only
+"""
 with open("mobile_apps_dataset.csv", "r") as f:
-    for row in tableR[1:]:
+    next(f)
+    for row in f:
+        row = row.strip().split(",")
         if int(row[2]) >= 18:
             print(row)
+"""
